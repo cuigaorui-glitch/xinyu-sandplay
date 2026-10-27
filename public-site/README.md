@@ -1,14 +1,23 @@
 # 心语沙盘 · 可编辑网站源码
 
-这是公开网站的前端源码和服务端接口源码。只预览页面可以使用 Python 静态服务器；DeepSeek 和 MiniMax 接口需要运行 server-source 中的 Sites/Vinext 服务端。密钥只能配置到服务端环境变量。
+这是公开网站的前端源码和服务端接口源码，使用 Vinext / Cloudflare Worker。此目录就是服务端项目，无需另找 `server-source`。密钥只能配置到服务端环境变量。
 
 ## 在电脑上运行
 
-1. 解压源码包；再下载 /downloads/xinyu-award-assets.zip 并解压到同一个目录（保留 static/core/awards 路径）。奖励设计素材单独打包，以适配网站发布大小限制。
-2. 如果电脑已安装 Python，在解压目录打开终端，执行：
-   python -m http.server 8080
-3. 用 Chrome 或 Edge 访问 http://localhost:8080/ 。
-4. 保持终端运行。按 Ctrl+C 停止。
+需要 Node.js 22.13 或更高版本，以及 `package.json` 指定的 pnpm 11.25.0。在仓库根目录打开终端：
+
+```sh
+cd public-site
+pnpm install --frozen-lockfile
+pnpm run build
+pnpm run start
+```
+
+使用终端显示的本地网址（默认 http://127.0.0.1:8787/），保持终端运行，按 Ctrl+C 停止。开发时也可运行 `pnpm run dev`，默认地址为 http://localhost:5173/，修改后自动更新。
+
+无密钥也可使用本机搭建与语料。需要 AI 和语音时，将 `.dev.vars.example` 复制为 `.dev.vars`，在本机填写密钥并重新启动；不要提交 `.dev.vars`。摄像头和麦克风需允许浏览器访问。
+
+本仓库的页面由服务端路由提供，不能在此目录用 `python -m http.server` 代替完整服务。Django 页面预览方式见[根目录说明](../README.md)。
 
 不要直接双击 HTML 文件：摄像头和静态资源需要通过本地 HTTP 或线上 HTTPS 地址使用。
 
@@ -33,6 +42,8 @@
 - static/core/toys/：按项目设计图整理的 63 种沙具参考、造型和目录。
 - static/core/images/：设计图片、矢量字标和可缩放云朵气泡。
 - static/core/fonts/：本地站酷快乐体与OFL许可证，仅用于小语气泡。
+
+上面的 HTML 和 `static/core/` 路径描述导出网站的结构。本仓库中原始页面在 `../core/templates/`，原始素材在 `../core/static/`；生成后的静态素材在 `public/static/`，页面内容在 `lib/pages.json`。请按[根目录说明](../README.md)运行导出脚本并重新构建，避免下一次导出覆盖修改。
 
 用 VS Code 等文本编辑器修改并保存，刷新浏览器查看。
 修改源码不会自动修改已发布的网站，需要把修改后的整个网站目录重新发布。
