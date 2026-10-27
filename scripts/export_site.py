@@ -79,7 +79,7 @@ guide = '''# 心语沙盘 · 可编辑网站源码
 
 源码包含项目设计素材，仅用于本项目协作；素材权属由项目方负责确认。
 '''
-(ROOT / 'public-site' / 'README.md').write_text(guide, encoding='utf-8')
+# The repository README documents the live server; keep the archive guide separate.
 downloads = OUT / 'downloads'
 downloads.mkdir(exist_ok=True)
 archive = downloads / 'xinyu-sandplay-source.zip'
