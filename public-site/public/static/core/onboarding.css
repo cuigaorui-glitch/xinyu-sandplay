@@ -1,38 +1,58 @@
-.xy-guide{box-sizing:border-box;border:0;border-radius:32px;padding:30px;max-width:850px;width:calc(100% - 32px);max-height:calc(100dvh - 32px);overflow:auto;background:#fffdf5;color:#483b35;box-shadow:0 20px 80px #372c3440;font-family:inherit;isolation:isolate}
-.xy-guide::backdrop{background:#292a3b91;backdrop-filter:blur(3px)}
-.xy-guide.xy-tour::backdrop{background:#292a3b80;backdrop-filter:none}
-.xy-guide[open]{display:flex;align-items:center;gap:20px}
-.xy-guide button,.xy-guide select{font:inherit;cursor:pointer;border:0;border-radius:18px;padding:12px 17px;background:#f4eee3;color:#483b35}
-.xy-guide button:focus-visible,.xy-tools button:focus-visible,.xy-guide select:focus-visible{outline:3px solid #8660af;outline-offset:4px}
-.xy-guide .xy-close{position:absolute;right:12px;top:10px;background:transparent;font-size:25px;z-index:2}
-.xy-guide-art{width:31%;object-fit:contain;filter:drop-shadow(0 9px 5px #54473515)}
-.xy-bubble{position:relative;flex:1;min-width:0;background:white;padding:24px;border-radius:26px;box-shadow:0 4px 0 #eadfcc}
-.xy-bubble:before{content:'';position:absolute;left:-13px;top:45%;border-top:13px solid transparent;border-bottom:13px solid transparent;border-right:16px solid white}
-.xy-eyebrow{font-size:12px;letter-spacing:1px;color:#987853;font-weight:700}
-.xy-guide h2{font-size:27px;line-height:1.4;margin:12px 0;color:#49372e}
-.xy-copy{font-size:16px;line-height:1.9;margin:12px 0 20px}
-.xy-note,.xy-disclosure{font-size:12px;line-height:1.7;color:#85786a}
-.xy-age-row{display:flex;gap:10px;margin-top:9px;flex-wrap:wrap}.xy-age-row select{flex:1;min-width:100px}
-.xy-guide .xy-primary{background:#ffdc68;font-weight:700;box-shadow:0 3px 0 #e9bd43}
-.xy-guide .xy-link{background:transparent;text-decoration:underline;font-size:13px;padding:12px 0}
-.xy-mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.xy-guide .xy-mode{text-align:left;border:2px solid transparent;display:flex;flex-direction:column;gap:12px;padding:16px;background:#f8f4eb}
-.xy-guide .xy-mode.is-recommended{border-color:#efbd44;background:#fffae6}.xy-mode strong{font-size:20px}.xy-mode>span:not(.xy-tag){font-size:13px;line-height:1.8}.xy-tag{font-size:11px;color:#967134}.xy-mode b{font-size:13px}
-.xy-tools{display:flex;gap:10px;justify-content:flex-end;margin:0 0 15px}.xy-tools button{background:#fff9e9;border:1px solid #e7d9bc;color:#796045;border-radius:30px;padding:10px 18px;cursor:pointer;font:inherit;font-size:13px}
-.xy-guide.xy-tour{width:570px;max-width:calc(100% - 24px);padding:18px;gap:8px;overflow:auto}
-.xy-tour .xy-guide-art{width:25%;align-self:flex-end}.xy-tour .xy-bubble{padding:20px}.xy-tour h2{font-size:21px}.xy-tour .xy-copy{font-size:14px;margin-bottom:12px}.xy-tour .xy-disclosure{font-size:10px;margin:8px 0}.xy-tour-actions{display:flex;gap:7px;justify-content:space-between}.xy-tour-actions button{font-size:12px;padding:10px}.xy-tour-actions button:disabled{opacity:.4;cursor:default}
-.xy-voice{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.xy-voice button{font-size:12px;padding:7px 10px}.xy-voice-status{font-size:11px;color:#947651}.xy-arrow{font-size:30px;color:#c48a25;float:right}
-.xy-guide.xy-tour-positioned{position:fixed;margin:0}.xy-spotlight{position:fixed;z-index:99999;border:3px solid #ffdc68;border-radius:18px;pointer-events:none;box-shadow:0 0 0 3px #fff9,0 0 25px #ffdc68}
-@media(max-width:600px){.xy-guide[open]{flex-direction:column;padding:20px;gap:4px}.xy-guide-art{width:110px;max-height:130px}.xy-bubble{padding:20px;width:100%;box-sizing:border-box}.xy-bubble:before{display:none}.xy-guide h2{font-size:23px}.xy-mode-grid{gap:8px}.xy-guide .xy-mode{padding:12px}.xy-guide.xy-tour[open]{flex-direction:row;padding:12px}.xy-tour .xy-guide-art{width:70px}.xy-tour .xy-bubble{padding:14px}.xy-tour h2{font-size:18px}.xy-tour .xy-copy{font-size:13px}.xy-tour-actions{flex-wrap:wrap}.xy-tools{justify-content:center}}
-/* The tutorial floats above the unchanged page; only its speech bubble is solid. */
-.xy-guide.xy-tour[open]{display:block;position:fixed;inset:0;margin:0;width:100vw;height:100dvh;max-width:none;max-height:none;padding:0;border-radius:0;background:transparent;box-shadow:none;overflow:hidden;cursor:pointer}
-.xy-tour .xy-bubble{position:fixed;box-sizing:border-box;width:350px;max-width:calc(100vw - 32px);padding:20px 24px;background:#fffdf1;border-radius:28px;box-shadow:0 5px 0 #e9dba9;cursor:default;z-index:2}
-.xy-tour .xy-bubble:before{display:block;left:22px;top:-17px;border:10px solid transparent;border-bottom-color:#fffdf1;border-right-color:#fffdf1}
-.xy-tour .xy-guide-art{position:fixed;width:170px;height:auto;max-height:none;object-fit:contain;z-index:3;filter:drop-shadow(0 8px 10px #0003);pointer-events:auto;cursor:pointer}
-.xy-tour .xy-close{position:fixed;right:22px;top:18px;background:#fffdf1;border-radius:50%;width:42px;height:42px;padding:0;z-index:5}
-.xy-tour h2{font-size:19px}.xy-tour .xy-copy{font-size:14px;line-height:1.85;margin:10px 0 12px}.xy-tour .xy-eyebrow{font-size:10px}.xy-tour .xy-disclosure{font-size:10px;line-height:1.5;color:#8d8271}
-.xy-tour .xy-tour-actions button{background:transparent;font-size:11px;padding:7px 4px;box-shadow:none;color:#947553}.xy-tour .xy-tour-actions .xy-primary{background:transparent;box-shadow:none;color:#735520}
-.xy-blank-hint{position:fixed;bottom:18px;left:0;width:100%;text-align:center;font-size:14px;color:white;text-shadow:0 2px 5px #0008;pointer-events:auto;z-index:4}
-.xy-tour .xy-arrow{z-index:4;pointer-events:none;font-size:32px;color:#ffdf76;text-shadow:0 2px 4px #0005}
-@media(max-width:600px){.xy-tour .xy-guide-art{width:100px}.xy-tour .xy-bubble{width:310px;padding:16px 20px}.xy-tour h2{font-size:18px}.xy-blank-hint{font-size:12px}}
-.xy-tools{position:fixed;right:18px;bottom:14px;z-index:1200;margin:0;display:flex;gap:8px}.xy-tools button{font-size:11px;padding:8px 12px;box-shadow:0 2px 7px #8c704525}
+/* Guide-only styles: the original website keeps its layout and palette. */
+.xy-guide{border:0;padding:28px 18px;margin:auto;box-sizing:border-box;width:900px;max-width:calc(100vw - 28px);max-height:calc(100dvh - 32px);overflow:auto;background:transparent;color:#543f28;font-family:inherit;box-shadow:none}
+.xy-guide::backdrop{background:#302b3d88;backdrop-filter:none}
+.xy-guide[open]{display:flex;align-items:center;gap:0}
+.xy-guide [hidden]{display:none!important}
+.xy-guide-art{flex:none;width:310px;max-width:38%;object-fit:contain;filter:drop-shadow(0 12px 8px #30271b30)}
+.xy-guide-content{flex:1;min-width:0;position:relative}
+.xy-bubble{position:relative;box-sizing:border-box;background:#fff9dc;padding:25px 28px;border-radius:30px;box-shadow:0 5px 0 #e6bc53;color:#543f28}
+.xy-bubble:before{content:'';position:absolute;left:-15px;top:45%;width:26px;height:26px;background:#fff9dc;transform:rotate(45deg);border-radius:5px}
+.xy-guide h2{position:relative;font-size:27px;line-height:1.4;margin:0 0 12px;color:#543f28}
+.xy-copy{position:relative;font-size:19px;line-height:1.7;margin:0}
+.xy-guide button{font:inherit;cursor:pointer;border:0;color:#543f28;border-radius:17px;padding:12px 16px;background:#ffe17d;transition:transform .15s}
+.xy-guide button:hover{transform:translateY(-2px)}
+.xy-guide button:focus-visible,.xy-tools button:focus-visible{outline:3px solid #8c6abb;outline-offset:4px}
+.xy-guide .xy-close{position:fixed;top:18px;right:20px;z-index:8;border-radius:50%;width:42px;height:42px;padding:0;background:#fff9dc;font-size:26px}
+.xy-age-options,.xy-mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:22px 0 0}
+.xy-guide .xy-age-options button{padding:20px 12px;font-size:20px;font-weight:800;box-shadow:0 5px 0 #d4ac43;border:2px solid #fff7ce;background:#ffda65;min-height:95px}
+.xy-age-options button span{display:block;font-size:14px;font-weight:500;margin-top:9px}
+.xy-guide .xy-age-options button:nth-child(2){background:#cde8d4;border-color:#effff3;box-shadow:0 5px 0 #9ec4aa}
+.xy-guide .xy-age-options button:nth-child(3){background:#d8d1ee;border-color:#f3efff;box-shadow:0 5px 0 #afa2d0}
+.xy-guide .xy-age-options button:nth-child(4){background:#f5d3bf;border-color:#fff0e8;box-shadow:0 5px 0 #d5ad96}
+.xy-guide .xy-self-select{display:block;margin:18px 0 0 auto;padding:10px 16px;background:#fff3b9;border:1px solid #efce70;font-size:15px}
+.xy-guide .xy-mode{position:relative;text-align:left;min-height:150px;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:24px 18px;background:#ffe185;border:3px solid #fff8d4;box-shadow:0 5px 0 #dcb746}
+.xy-guide .xy-mode[data-mode=online]{background:#d8e6cf;border-color:#f1f8eb;box-shadow:0 5px 0 #b0c59e}
+.xy-mode strong{font-size:23px}.xy-mode>span:not(.xy-tag){font-size:14px;line-height:1.6}.xy-mode b{font-size:15px}
+.xy-guide .xy-mode.is-recommended{border-color:#e8ae2a;box-shadow:0 0 0 3px #fff7ce,0 6px 0 #dcb746}
+.xy-tag{position:absolute;top:-14px;right:8px;background:#ffe07a;border:2px solid #fff9da;border-radius:10px;padding:5px 9px;font-size:13px;font-weight:700}
+.xy-tools{position:fixed;right:18px;bottom:14px;z-index:1200;margin:0;display:flex;gap:8px}
+.xy-tools button{font:inherit;cursor:pointer;font-size:11px;padding:8px 12px;background:#fff9e9;border:1px solid #e7d9bc;color:#796045;border-radius:30px;box-shadow:0 2px 7px #8c704525}
+/* Each short speech bubble is beside Xiaoyu, outside the highlighted control. */
+.xy-guide.xy-tour[open]{display:block;position:fixed;inset:0;margin:0;width:100vw;height:100dvh;max-width:none;max-height:none;padding:0;overflow:hidden;cursor:pointer}
+.xy-tour .xy-guide-content{position:fixed;z-index:4;width:330px;max-width:none}
+.xy-tour .xy-guide-art{position:fixed;z-index:5;width:250px;max-width:none;height:auto;cursor:pointer;pointer-events:auto}
+.xy-tour .xy-bubble{width:100%;padding:19px 22px;border-radius:25px;background:#fff9dc;box-shadow:0 4px 0 #e6bc53}
+.xy-tour h2{font-size:21px;line-height:1.4;margin:0 0 9px}
+.xy-tour .xy-copy{font-size:17px;line-height:1.65;margin:0}
+.xy-voice{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:12px}
+.xy-guide .xy-voice button{font-size:13px;padding:6px 10px;background:#ffedb4}
+.xy-voice-status{font-size:13px;line-height:1.5;color:#8d6d40}
+.xy-voice-consent{background:#fff0b8;padding:12px;border-radius:13px;margin-top:10px;font-size:14px;line-height:1.6}
+.xy-voice-consent p{margin:0 0 8px}.xy-guide .xy-voice-consent button{font-size:13px;padding:7px;margin:0 5px 0 0}
+.xy-tour-actions{display:flex;align-items:center;gap:10px;margin-top:13px;justify-content:space-between}
+.xy-guide .xy-tour-actions button{font-size:14px;padding:7px 10px;background:transparent}
+.xy-guide .xy-tour-actions .xy-primary{background:#ffdc68;font-weight:700;border-radius:12px}
+.xy-guide .xy-tour-actions button:disabled{opacity:.3;cursor:default}
+.xy-progress{font-size:14px;color:#a18457;white-space:nowrap}
+.xy-spotlight{position:fixed;z-index:1;box-sizing:border-box;border:3px solid #ffdc68;border-radius:17px;pointer-events:none;box-shadow:0 0 0 3px #fff9,0 0 20px #ffdc68}
+.xy-tour .xy-arrow{position:fixed;z-index:2;pointer-events:none;font-size:29px;color:#ffe27b;text-shadow:0 2px 4px #0004;line-height:1}
+@media(max-width:600px){
+ .xy-guide[open]:not(.xy-tour){display:block;padding:20px 12px;max-width:calc(100vw - 20px);overflow:auto}
+ .xy-guide:not(.xy-tour) .xy-guide-art{position:absolute;z-index:4;left:0;top:35px;width:140px;max-width:none;height:150px;object-fit:contain}
+ .xy-guide:not(.xy-tour) .xy-bubble{margin-left:120px;padding:16px 18px;min-height:145px}
+ .xy-guide:not(.xy-tour) h2{font-size:20px}.xy-guide:not(.xy-tour) .xy-copy{font-size:15px}
+ .xy-age-options,.xy-mode-grid{gap:10px;margin-top:20px}.xy-guide .xy-age-options button{font-size:18px;padding:15px 10px;min-height:85px}.xy-age-options button span{font-size:13px}
+ .xy-guide .xy-mode{padding:22px 13px;min-height:145px}.xy-mode strong{font-size:20px}.xy-mode>span:not(.xy-tag){font-size:13px}
+ .xy-tour h2{font-size:18px}.xy-tour .xy-copy{font-size:16px}.xy-tour .xy-bubble{padding:15px 17px}.xy-tour-actions{gap:2px}.xy-guide .xy-tour-actions button{font-size:12px;padding:6px 4px;white-space:nowrap;flex-shrink:0}.xy-progress{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.xy-guide button{transition:none}}
